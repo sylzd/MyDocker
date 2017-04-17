@@ -9,7 +9,7 @@ ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt -i https://pypi.douban.com/simple
 COPY docker-entrypoint.sh /bin/
 
-# transmmit dos file to unix file
+# transmmit dos file to unix file, windows docker need!!
 RUN cat -v /bin/docker-entrypoint.sh
 RUN cat /bin/docker-entrypoint.sh | tr -d "\r" > /bin/docker-entrypoint.sh
 RUN cat -v /bin/docker-entrypoint.sh
